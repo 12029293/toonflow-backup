@@ -1,0 +1,40 @@
+{
+  "settings": {
+    "aiModels": [],
+    "privacy": {
+      "dataCollectionEnabled": true,
+      "anonymousId": "62d6cb87-abe2-4450-8d19-b60c09857f28"
+    },
+    "helloCompleted": true,
+    "stores": {
+      "toonflow.projectList": {
+        "project": {
+          "directory": "/app/data/workspaces",
+          "name": "workspaces",
+          "lastOpenedAt": 1792877730932
+        },
+        "projectList": [
+          {
+            "directory": "/app/data/workspaces",
+            "name": "workspaces",
+            "lastOpenedAt": 1792877730932
+          }
+        ]
+      }
+    },
+    "customProviders": [
+      {
+        "id": "beichen",
+        "label": "deepseek-v4.1-flash",
+        "apiUrl": "https://api.beichenapi.com/v1",
+        "protocol": "openai-completions",
+        "models": [
+          {
+            "id": "deepseek-v4.1-flash",
+            "label": "deepseek-v4.1-flash"
+          }
+        ]
+      }
+    ]
+  }
+}
