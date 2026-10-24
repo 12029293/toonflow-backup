@@ -1,47 +1,49 @@
-# 媒体文件与二进制产物不进仓库
-*.png
-*.jpg
-*.jpeg
-*.webp
-*.gif
-*.mp4
-*.mov
-*.webm
-*.mp3
-*.wav
-*.m4a
-*.zip
-*.tar.gz
+# =============================================================================
+# 注意：source-tree/ 是 Toonflow 上游完整源码，其中的图片（应用 logo、UI 资源、
+# 文档截图）都是构建必需的，所以媒体文件规则只作用于 assets/（运行时数据）。
+# =============================================================================
 
-# 数据目录里的重型/敏感部分（只保留 canvases/providers/skills/ext）
+# --- 运行时数据里的媒体与重型目录（生成产物，不进仓库）---
 assets/**/workspaces/
 assets/**/ffmpeg/
 assets/**/.agent/
 assets/**/sessions/
 assets/**/attachments/
 
-# Agent 会话与附件（含对话内容）
+# --- 打包产物 ---
+*.tar.gz
+*.zip
+
+# --- Agent 会话与附件（含对话内容）---
 .agent/
 sessions/
 attachments/
 
-# 编译产物
-*.umd.js
-*.tool.js
+# --- 编译产物 ---
 dist/
 node_modules/
+build/
+*.tsbuildinfo
 
-# 系统垃圾
+# 数据目录里的编译产物（源码树中不含 .umd.js / .tool.js）
+/assets/**/*.umd.js
+/assets/**/*.tool.js
+
+# --- 系统垃圾 ---
 .DS_Store
 Thumbs.db
 *.log
 __pycache__/
+*.pyc
 
-# 密钥类（双保险，正常不应出现）
+# --- 密钥类（双保险，正常不应出现）---
 .env
 .env.*
+!.env.example
 *.pem
 *.key
 *.p12
+*.pfx
+*.p8
 secrets.json
 credentials.json
